@@ -9,6 +9,8 @@ def selection_sort(array):
             if array[j]<array[smallest]:
                 smallest = j
                 comparisons += 1
-        array[i], array[smallest] = array[smallest], array[i]
-        swaps += 1
+        if smallest != i:
+            array[i], array[smallest] = array[smallest], array[i]
+            swaps += 1
+
     return array, comparisons, swaps
